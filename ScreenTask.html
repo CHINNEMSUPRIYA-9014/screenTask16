@@ -1,0 +1,159 @@
+<html>
+    <head>
+        <title>Screen Task</title>
+        <link type="text/css" rel="stylesheet" href="./styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <div>
+                <div class="maindiv">
+                    <div class="hr-with-heading">
+                        <span>YAY! It's BOGO</span>
+                    </div>
+                    <div class="wrapper" onclick="selectDiv(0)">
+                        <div class="selectable" id="div1">
+                            <input type="radio" name="option" checked>
+                            <div class="infodiv">
+                                <div id="unitdiv1" class="unitdiv">
+                                <div class="subunit">
+                                    <h4>1 UNIT</h4>
+                                    <p>10% Off</p>
+                                </div>
+                                <p>Standard Price</p>
+                                </div>
+                                <div id="pricediv1" class="pricediv">
+                                <h4>$10.00 USD</h4>
+                                <small>$24.00 USD</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="subdiv" id="subdiv1">
+                            <table>
+                                <thead>
+                                    <tr><th></th><th>Size</th><th>Color</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>#1</td>
+                                        <td><select><option>S</option><option>M</option><option>L</option></select></td>
+                                        <td><select><option>color</option><option selected="true">Black</option><option>White</option></select></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#2</td>
+                                        <td><select><option>S</option><option>M</option><option>L</option></select></td>
+                                        <td><select><option>Color</option><option>Black</option><option>White</option></select></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="wrapper" id="wrapper2" onclick="selectDiv(1)">
+                        <span class="tag-label">Most Popular</span>
+                        <div class="selectable" id="div2">
+                            <input type="radio" name="option">
+                            <div class="infodiv">
+                                <div id="unitdiv2" class="unitdiv">
+                                <div class="subunit">
+                                    <h4>2 UNIT</h4>
+                                    <p>30% Off</p>
+                                </div>
+                                </div>
+                                <div id="pricediv2" class="pricediv">
+                                <h4>$18.00 USD</h4>
+                                <small>$24.00 USD</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="subdiv" id="subdiv2">
+                            <table>
+                                <thead>
+                                    <tr><th></th><th>Size</th><th>Color</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>#1</td>
+                                        <td><select><option>S</option><option>M</option><option>L</option></select></td>
+                                        <td><select><option>color</option><option selected="true">Black</option><option>White</option></select></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#2</td>
+                                        <td><select><option>S</option><option>M</option><option>L</option></select></td>
+                                        <td><select><option>Color</option><option>Black</option><option>White</option></select></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="wrapper" onclick="selectDiv(2)">
+                        <div class="selectable" id="div3">
+                            <input type="radio" name="option">
+                            <div class="infodiv">
+                                <div id="unitdiv3" class="unitdiv">
+                                <div class="subunit">
+                                    <h4>3 UNIT</h4>
+                                    <p>30% Off</p>
+                                </div>
+                                </div>
+                                <div id="pricediv3" class="pricediv">
+                                <h4>$24.00 USD</h4>
+                                <small>$24.00 USD</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="subdiv" id="subdiv3">
+                            <table>
+                                <thead>
+                                    <tr><th></th><th>Size</th><th>Color</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>#1</td>
+                                        <td><select><option>S</option><option>M</option><option>L</option></select></td>
+                                        <td><select><option>color</option><option selected="true">Black</option><option>White</option></select></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#2</td>
+                                        <td><select><option>S</option><option>M</option><option>L</option></select></td>
+                                        <td><select><option>Color</option><option>Black</option><option>White</option></select></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="infodiv">
+                        <span class="freedelv">Free Delivery</span>
+                        <h4>Total: $18.00 USD</h4>
+                    </div>
+
+                    <div class="cart">
+                        <button class="btncart">+ Add to Cart</button>
+                        <small class="powerby">@ Powered by Pumper</small>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+  function selectDiv(index) {
+    const wrappers = document.querySelectorAll('.wrapper');
+    const radios = document.querySelectorAll('.wrapper input[type="radio"]');
+
+    wrappers.forEach((wrapper, i) => {
+      wrapper.classList.remove('active');
+      radios[i].checked = false;
+    });
+
+    wrappers[index].classList.add('active');
+    radios[index].checked = true;
+  }
+
+  // Default select first div on load
+  window.onload = function () {
+    selectDiv(0);
+  };
+    </script>
+</html>
